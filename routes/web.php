@@ -18,7 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/reportar', 'HomeController@report');
 
-Route::get('/reportar', function () {
-    return view('report');
+Route::group(['middleware'=>'auth'], function ()
+{
+  Route::get('/usuarios', 'Admin\UserController@index');  
+  Route::get('/proyectos', 'Admin\ProjectController@index');
+  Route::get('/config', 'Admin\ConfigController@index');
 });
