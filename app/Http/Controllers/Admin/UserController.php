@@ -9,6 +9,6 @@ class UserController extends Controller
 {
      public function index()
     {
-        return 'Ruta/usuario desde Usercontroller';
+        return 'Ruta/usuario bebita  desde Usercontroller';
     }
 }
